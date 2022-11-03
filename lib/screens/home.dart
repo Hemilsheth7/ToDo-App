@@ -78,7 +78,11 @@ class _HomeState extends State<Home> {
                       //detailed view of task
                       Navigator.push(context,
                           MaterialPageRoute(
-                              builder: (context)=>DetailedView(title: docs[index]['title'],description: docs[index]['description'], date: DateFormat.yMd().add_jm().format(date),))
+                              builder: (context)=>DetailedView(
+                                title: docs[index]['title'],
+                                description: docs[index]['description'],
+                                date: DateFormat.yMd().add_jm().format(date),
+                              ))
                       );
                     },
                     child: Container(
@@ -128,7 +132,7 @@ class _HomeState extends State<Home> {
                                     .document(docs[index]['time'])
                                     .delete();
                                 Fluttertoast.showToast(msg: "Deleted");
-                                },
+                              },
                             ),
                           ),
                         ],
